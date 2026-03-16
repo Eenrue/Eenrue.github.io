@@ -1,0 +1,249 @@
+%------------------------
+% Ethan's Résumé Template
+% Author: necusjz
+% License: CC-BY-4.0
+%------------------------
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+\usepackage{tikz}
+\input{glyphtounicode}
+
+% font options
+\usepackage{newpxtext}
+\linespread{1.05}  % palladio needs more leading (space between lines)
+\usepackage[T1]{fontenc}
+
+\pagestyle{fancy}
+\fancyhf{}  % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\footskip}{5pt}
+
+% sections formatting
+\titleformat{\section}{
+  \vspace{-2pt}\scshape\raggedright\Large
+}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+% ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+% custom commands
+\newcommand{\cvitem}[1]{
+  \item\small{
+    {#1\vspace{-2pt}}
+  }
+}
+
+\newcommand{\cvheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\cvheadingstart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\cvheadingend}{\end{itemize}}
+\newcommand{\cvitemstart}{\begin{itemize}\justifying}
+\newcommand{\cvitemend}{\end{itemize}\vspace{-5pt}}
+
+\newcommand{\cvskill}[2]{
+  \textcolor{black}{\textbf{#1}}\hfill
+  \foreach \x in {1,...,5}{%
+    \space{\ifnumgreater{\x}{#2}{\color{black!80!white!20}}{\color{black}}\faSquare}}\par%
+  \vspace{-2pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\footnotesize$\bullet$}}$}
+
+\begin{document}
+
+% contact information
+\begin{center}
+  \textbf{\LARGE\scshape HyunWook CHOI} \\
+  \vspace{1pt}\small
+  \href{enrue1894@korea.ac.kr}{hyunwook@kaist.ac.kr}
+  $\ \diamond\ $
+  \href{https://github.com/Eenrue/}{GitHub}
+  $\ \diamond\ $
+  \href{https://www.linkedin.com/in/hyun-wook-choi/}{LinkedIn}
+\end{center}
+
+\section{Research Interests}
+My research interests lie in computer vision and machine learning, with a focus on developing practical and efficient solutions for understanding and modeling the visual world. My current research focuses on the following topics:
+\cvitemstart
+    \cvitem{World Models}
+    \cvitem{Video, 4D Generation}
+    \cvitem{Auto-Regressive Video Generation}
+\cvitemend
+\vspace{0.5em}
+I am particularly interested in leveraging structural priors from 3D and 4D representations, as well as auto-regressive generation paradigms, to construct conditional world models that can effectively capture the real world we live in.
+
+
+\section{Education}
+\cvheadingstart
+  \cvheading
+    {Korea Advanced Institute of Science and Technology (KAIST)}{Advisor: Seungryong Kim}
+    {M.S/Ph.D Integrated Student in Artificial Intelligence}{Feb 2026-}
+  \cvitemend
+\vspace{0.5em}
+\cvheadingstart
+  \cvheading
+    {Korea University}{}
+    {B.S in Cyber Defence (GPA: 4.33/4.5, \textbf{ranked 1st)}}{May 2022-Feb 2026}
+  \cvitemstart
+    \cvitem{Full-funded Scholarship}
+    \cvitem{Vice President of Cyber Defence}
+  \cvitemend
+    
+\cvheadingend
+
+\section{Research Experience}
+\cvheadingstart
+\cvheading
+  {Undergraduate Research Intern}{Advisor: Seungryong Kim}
+  {Kim Jaechul Graduate School of AI at KAIST}{July 2024–Feb 2026}
+\cvitemstart
+  \cvitem{Research in World Models, Video Generation, and Segmentation}
+\cvitemend
+\cvheadingend
+
+\section{Publications}
+
+\cvheadingstart
+  \cvheading
+    {Seoul World Model: Grounding World Simulation Models in a Real-World Metropolis}{}
+    {Junyoung Seo*, \textbf{Hyunwook Choi}*, Minkyung Kwon, Jinhyeok Choi, Siyoon Jin, Gayoung Lee, Junho Kim,\\ JoungBin Lee, Geonmo Gu, Dongyoon Han, Sangdoo Yun, Seungryong Kim, Jin-Hwa Kim}{}
+
+  \textit{Arxiv preprint} \href{https://seoul-world-model.github.io/}{[Project Page]}
+\cvheadingend
+
+\cvheadingstart
+  \cvheading
+    {MATRIX: Mask Track Alignment
+for Interaction-Aware Video Generation}{}
+    {Siyoon Jin, Seongchan Kim, Dahyun Chung, Jaeho Lee, \textbf{Hyunwook Choi}, Jisu Nam, Jiyoung Kim, Seungryong Kim}{}
+
+  \textbf{\textit{ICLR 2026}} \href{https://cvlab-kaist.github.io/MATRIX/}{[Project Page]}
+\cvheadingend
+
+\cvheadingstart
+  \cvheading
+    {README: Robust Error-Aware Digital Signature via Deep Watermarking Model}{}
+    {\textbf{Hyunwook Choi}, Sangyun Won, Daeyeon Hwang, Junhyeok Choi}{}
+
+  \textit{Arxiv preprint} \href{https://readme-2025.github.io}{[Project Page]}
+\cvheadingend
+
+\cvheadingstart
+  \cvheading
+    {S4M: Boosting Semi-Supervised Instance Segmentation with Segment Anything Model}{}
+    {Heeji Yoon\textsuperscript{*}, Heeseong Shin\textsuperscript{*}, Eunbeen Hong, \textbf{Hyunwook Choi}, Hansang Cho, Daun Jeong, Seungryong Kim}{}
+
+    \textbf{\textit{ICCV 2025}} \href{https://cvlab-kaist.github.io/S4M}{[Project Page]}
+    
+\cvheadingend
+\cvheadingstart
+  \cvheading
+    {Referring Video Object Segmentation via Language-aligned Track Selection}{}
+    {Seongchan Kim\textsuperscript{*}, Woojeong Jin\textsuperscript{*}, Sangbeom Lim\textsuperscript{*}, Heeji Yoon\textsuperscript{*}, \textbf{Hyunwook Choi}, Seungryong Kim}{}
+
+  \textit{Arxiv preprint} \href{https://cvlab-kaist.github.io/SOLA/}{[Project Page]}
+\cvheadingend
+
+
+
+
+\section{Project Experience}
+
+\cvheadingstart
+  \cvheading
+    {Small Korean VLM : AIKU Project [\href{https://github.com/AIKU-Official/aiku-25-1-Small-Korean-VLM}{Github}]}{}
+    {Co-Lead}{March 2025-June 2025}
+      \cvitemstart
+    \cvitem{Built a Korean-specific dataset and successfully trained the first under-1B parameter Korean VLM, outperforming other models of similar scale.}
+  \cvitemend
+\cvheadingend
+\vspace{-10pt}
+\cvheadingstart
+  \cvheading
+    {NAIS : Educational App Development [\href{https://play.google.com/store/apps/details?id=com.naes.everychoice\&hl=ko\&pli=1}{Google Play}]}{}
+    {Product Manager}{March 2024-Feb 2025}
+      \cvitemstart
+    \cvitem{Led the product management team for an educational app by renowned Earth Science instructor, Jin-Hwan Na. Expanded downloads from 1.5K to over 5K and increased daily active users (DAU) to exceed 1K.}
+  \cvitemend
+\cvheadingend
+\vspace{-10pt}
+\cvheadingstart
+  \cvheading
+    {Tanghulu Maker : Game Development [\href{https://github.com/Eenrue/tanghulu-maker}{Github}]}{}
+    {Solo Game Developer}{Oct 2023–Dec 2023}
+      \cvitemstart
+    \cvitem{Independently designed and developed a game using Unity and C\#, achieving over 3K downloads.}
+  \cvitemend
+\cvheadingend
+
+\section{Service}
+\cvheadingstart
+  \cvheading
+    {AIKU: Deep Learning Society, Korea University}{}
+    {Delivered an internal lecture guiding Diffusion Models and Their Applications based on KAIST CS492(D).}{}
+\cvheadingend
+\vspace{-5pt}
+\cvheadingstart
+  \cvheading
+    {BRAIN: AI Society, Cyber Defence, Korea University}{}
+    {Delivered an internal lecture introducing Transformer architectures and attention mechanisms to members.}{} % transformer에 대해서 학우들에게 강의함
+\cvheadingend
+\vspace{5pt}
+
+\section{Honors and Awards}
+\cvitemstart
+    \cvitem{National Science \& Technology Scholarship (Ranked 1st in Department)} % 과에서 1등
+    \cvitem{Dean’s List, Korea University (Spring 2024, GPA: 4.5/4.5)}
+    \cvitem{Semester High Honors, Korea University (Spring 2022, Fall 2022, Spring 2023, Fall 2023, Spring 2024, Fall 2024)}
+    \cvitem{2nd Prize, Best Project, Korea University Deep Learning Association (Spring 2025)}
+\cvitemend
+
+\section{Technical Skills}
+\cvitemstart
+    \cvitem{Programming: Python, C++}
+    \cvitem{Deep Learning: Pytorch}
+    \cvitem{Game Engine: Unity}
+\cvitemend
+
+\section{International Experience}
+\cvheadingstart
+  \cvheading
+    {London, United Kingdom}{Oct 2010–Dec 2014}
+    {} {}
+\cvheadingend
+
+\end{document}
